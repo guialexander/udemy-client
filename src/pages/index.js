@@ -6,7 +6,8 @@ import { useAuth0 } from '@auth0/auth0-react';
 import TitleHeading from '../componentes/titleHeading';
 import headingImg from '../images/Title-heading.png';
 import headingImgPhone from '../images/Title-heading-movil.png';
-import AlternateHeadline from '../componentes/alternateheadline'
+import AlternateHeadline from '../componentes/alternateheadline';
+import SelectionCourses from '../componentes/selectionofcourses';
 
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
@@ -34,6 +35,8 @@ export default function Home() {
       title='A broad selection of courses'
       info='Choose from 204,000 online video courses with new additions published every month'
       />
+
+      <SelectionCourses />
 
 
 

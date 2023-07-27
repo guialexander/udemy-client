@@ -1,15 +1,19 @@
-import { Link, useNavigate } from "react-router-dom";
+
 import Ratings from 'react-ratings-declarative';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+
 
 function Course({id,img,title,teacher,price,rating,lastUpdate,totalHours,level,subtitles,description}){
     //toca colocar el id por el mometo es undefined
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
+    const router = useRouter();
 
 
 
     return(
-        <div onClick={()=> navigate('/')} className="main-container-course">
-            <img src={img} alt={title}/>
+        <div onClick={()=> router.push('/')} className="main-container-course">
+            <Image src={img} alt={title} width={50}  height={50}/>
             <h3 className="course-title">{title}</h3>
             <p className="course-teacher">{teacher}</p>
         <div className="container-rating-course-slider">
