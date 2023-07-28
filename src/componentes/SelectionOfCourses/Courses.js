@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
-import Course from "./Course";
+
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Slider from "react-slick";
+
 //import "slick-carousel/slick/slick.css";
 //import "slick-carousel/slick/slick-theme.css";
+import Course from './Course';
+import Link from 'next/link';
+
 
 function Courses({ title, info, link, url }) {
   const SlickArrowLeft = ({ dirrection, svg, onClick, currentSlide }) => (
@@ -324,14 +327,14 @@ function Courses({ title, info, link, url }) {
     <div className="main-courses-carrusel">
       <h2 className="courses-title">{title}</h2>
       <p className="courses-info">{info}</p>
-      <Link to={url} className="btn-courses">
-        {link}
-      </Link>
+      <Link href={link} >{link}</Link>
       <div className="container-slider">
         <Slider {...settings}>
           {courses.map((item) => {
             return (
+              
               <Course
+                key={item._id}
                 img={item.image}
                 title={item.title}
                 teacher={item.instructor}
@@ -347,7 +350,7 @@ function Courses({ title, info, link, url }) {
           })}
         </Slider>
       </div>
-    </div>
+      </div>
   );
 }
 
