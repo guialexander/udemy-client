@@ -334,6 +334,7 @@ function Courses({ title, info, link, url }) {
             return (
               
               <Course
+                key={item._id}
                 img={item.image}
                 title={item.title}
                 teacher={item.instructor}
